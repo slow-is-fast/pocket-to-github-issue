@@ -52,7 +52,7 @@ def search_github_issue(title):
     headers = {
         'Accept': 'application/vnd.github.symmetra-preview+json',
     }
-    resp = requests.get(url)
+    resp = requests.get(url, auth=(USERNAME, PASSWORD))
     if resp.status_code > 400:
         print resp.status_code
         return None
